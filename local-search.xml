@@ -4,6 +4,35 @@
   
   
   <entry>
+    <title>hexo图片显示问题</title>
+    <link href="/2025/08/28/hexo%E5%9B%BE%E7%89%87%E6%98%BE%E7%A4%BA%E9%97%AE%E9%A2%98/"/>
+    <url>/2025/08/28/hexo%E5%9B%BE%E7%89%87%E6%98%BE%E7%A4%BA%E9%97%AE%E9%A2%98/</url>
+    
+    <content type="html"><![CDATA[<p>hexo图片无法显示的问题可以通过一下方法解决：</p><ul><li>安装图片插件<code>hexo-renderer-marked</code>，在Git Bas中运行如下命令：<code>npm install hexo-renderer-marked</code>安装。</li><li>然后在配置文件<code>config.yaml</code>中做如下更改：</li></ul><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-attr">post_asset_folder</span>: <span class="hljs-literal">true</span><br><span class="hljs-attr">marked</span>:<br>  <span class="hljs-attr">prependRoot</span>: <span class="hljs-literal">true</span><br>  <span class="hljs-attr">postAsset</span>: <span class="hljs-literal">true</span><br></code></pre></td></tr></table></figure><p>这样每次在使用<code>hexo new</code>命令创建新文章时，会生成相同名字的文件夹，也就是文章资源文件夹</p><ul><li>修改Typora的设置，在文件 -&gt; 偏好设置 -&gt; 图像中做如下设置：①修改插入图片时 -&gt; 为复制到指定路径。②选中优先使用相对路径。</li></ul><p><img src="/2025/08/28/hexo%E5%9B%BE%E7%89%87%E6%98%BE%E7%A4%BA%E9%97%AE%E9%A2%98/image-20250828161143052.png" alt="Typora的设置"></p><p>经过以上设置后，在复制图片粘贴到Typora中后，会直接复制该图片到文章资源文件夹，同时自动更改路径，图片会自动变为! [ ] ( 文章名&#x2F;image.jpg)，经测试可以正常显示。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>hexo</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>hexo</tag>
+      
+      <tag>Typora</tag>
+      
+      <tag>网站功能</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>增加网站底部运行时间显示</title>
     <link href="/2025/08/28/%E5%A2%9E%E5%8A%A0%E7%BD%91%E7%AB%99%E5%BA%95%E9%83%A8%E8%BF%90%E8%A1%8C%E6%97%B6%E9%97%B4%E6%98%BE%E7%A4%BA/"/>
     <url>/2025/08/28/%E5%A2%9E%E5%8A%A0%E7%BD%91%E7%AB%99%E5%BA%95%E9%83%A8%E8%BF%90%E8%A1%8C%E6%97%B6%E9%97%B4%E6%98%BE%E7%A4%BA/</url>
@@ -78,6 +107,8 @@
     
     <tags>
       
+      <tag>hexo</tag>
+      
       <tag>备忘</tag>
       
       <tag>碎碎念</tag>
@@ -85,8 +116,6 @@
       <tag>GitHub</tag>
       
       <tag>Gitee</tag>
-      
-      <tag>hexo</tag>
       
       <tag>waline</tag>
       
