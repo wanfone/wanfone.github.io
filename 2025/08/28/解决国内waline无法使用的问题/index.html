@@ -20,26 +20,27 @@
   <meta name="author" content="wanfone">
   <meta name="keywords" content="">
   
-    <meta name="description" content="hexo图片无法显示的问题可以通过一下方法解决：  安装图片插件hexo-renderer-marked，在Git Bash中运行如下命令：npm install hexo-renderer-marked安装。  然后在配置文件config.yaml中做如下更改：   1234post_asset_folder: truemarked:  prependRoot: true  postAsset:">
+    <meta name="description" content="waline的评论模块国内IP可以正常显示，但是无法登录，无法加载表情和历史评论，导致无法使用。究其原因是vercel.app域名在国内遭到污染无法访问导致的。解决方案：用已有域名的子域名来代替vercel.app。 步骤如下： ① 打开域名管理后台，添加一个二级域名，以下以新网为例。添加一个comment二级域名，并且CNAME解析记录指向了cname.vercel-dns.com，如下图： .">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hexo图片显示问题">
-<meta property="og:url" content="http://example.com/2025/08/28/hexo%E5%9B%BE%E7%89%87%E6%98%BE%E7%A4%BA%E9%97%AE%E9%A2%98/index.html">
+<meta property="og:title" content="解决国内waline无法使用的问题">
+<meta property="og:url" content="http://example.com/2025/08/28/%E8%A7%A3%E5%86%B3%E5%9B%BD%E5%86%85waline%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8%E7%9A%84%E9%97%AE%E9%A2%98/index.html">
 <meta property="og:site_name" content="wanfone碎碎念">
-<meta property="og:description" content="hexo图片无法显示的问题可以通过一下方法解决：  安装图片插件hexo-renderer-marked，在Git Bash中运行如下命令：npm install hexo-renderer-marked安装。  然后在配置文件config.yaml中做如下更改：   1234post_asset_folder: truemarked:  prependRoot: true  postAsset:">
+<meta property="og:description" content="waline的评论模块国内IP可以正常显示，但是无法登录，无法加载表情和历史评论，导致无法使用。究其原因是vercel.app域名在国内遭到污染无法访问导致的。解决方案：用已有域名的子域名来代替vercel.app。 步骤如下： ① 打开域名管理后台，添加一个二级域名，以下以新网为例。添加一个comment二级域名，并且CNAME解析记录指向了cname.vercel-dns.com，如下图： .">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/2025/08/28/hexo%E5%9B%BE%E7%89%87%E6%98%BE%E7%A4%BA%E9%97%AE%E9%A2%98/image-20250828161143052.png">
-<meta property="article:published_time" content="2025-08-28T08:02:43.000Z">
-<meta property="article:modified_time" content="2025-08-28T08:39:28.669Z">
+<meta property="og:image" content="http://example.com/2025/08/28/%E8%A7%A3%E5%86%B3%E5%9B%BD%E5%86%85waline%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8%E7%9A%84%E9%97%AE%E9%A2%98/image-20250828182559071.png">
+<meta property="og:image" content="http://example.com/2025/08/28/%E8%A7%A3%E5%86%B3%E5%9B%BD%E5%86%85waline%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8%E7%9A%84%E9%97%AE%E9%A2%98/image-20250828183148715.png">
+<meta property="og:image" content="http://example.com/2025/08/28/%E8%A7%A3%E5%86%B3%E5%9B%BD%E5%86%85waline%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8%E7%9A%84%E9%97%AE%E9%A2%98/image-20250828184814653.png">
+<meta property="article:published_time" content="2025-08-28T10:12:48.000Z">
+<meta property="article:modified_time" content="2025-08-28T10:54:13.631Z">
 <meta property="article:author" content="wanfone">
-<meta property="article:tag" content="hexo">
-<meta property="article:tag" content="Typora">
-<meta property="article:tag" content="网站功能">
+<meta property="article:tag" content="备忘">
+<meta property="article:tag" content="碎碎念">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/2025/08/28/hexo%E5%9B%BE%E7%89%87%E6%98%BE%E7%A4%BA%E9%97%AE%E9%A2%98/image-20250828161143052.png">
+<meta name="twitter:image" content="http://example.com/2025/08/28/%E8%A7%A3%E5%86%B3%E5%9B%BD%E5%86%85waline%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8%E7%9A%84%E9%97%AE%E9%A2%98/image-20250828182559071.png">
   
   
   
-  <title>hexo图片显示问题 - wanfone碎碎念</title>
+  <title>解决国内waline无法使用的问题 - wanfone碎碎念</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -205,7 +206,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="hexo图片显示问题"></span>
+            <span id="subtitle" data-typed-text="解决国内waline无法使用的问题"></span>
           
         </div>
 
@@ -216,8 +217,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-08-28 16:02" pubdate>
-          2025年8月28日 下午
+        <time datetime="2025-08-28 18:12" pubdate>
+          2025年8月28日 晚上
         </time>
       </span>
     
@@ -228,7 +229,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          212 字
+          253 字
         
       </span>
     
@@ -239,7 +240,7 @@
         
         
         
-          2 分钟
+          3 分钟
         
       </span>
     
@@ -276,26 +277,23 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">hexo图片显示问题</h1>
+            <h1 id="seo-header">解决国内waline无法使用的问题</h1>
             
             
               <div class="markdown-body">
                 
-                <p>hexo图片无法显示的问题可以通过一下方法解决：</p>
-<ol>
-<li><p>安装图片插件<code>hexo-renderer-marked</code>，在Git Bash中运行如下命令：<code>npm install hexo-renderer-marked</code>安装。</p>
-</li>
-<li><p>然后在配置文件<code>config.yaml</code>中做如下更改：</p>
-</li>
-</ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-attr">post_asset_folder</span>: <span class="hljs-literal">true</span><br><span class="hljs-attr">marked</span>:<br>  <span class="hljs-attr">prependRoot</span>: <span class="hljs-literal">true</span><br>  <span class="hljs-attr">postAsset</span>: <span class="hljs-literal">true</span><br></code></pre></td></tr></table></figure>
+                <p><code>waline</code>的评论模块国内IP可以正常显示，但是无法登录，无法加载表情和历史评论，导致无法使用。究其原因是<code>vercel.app</code>域名在国内遭到污染无法访问导致的。解决方案：用已有域名的子域名来代替<code>vercel.app</code>。</p>
+<p>步骤如下：</p>
+<p>① 打开域名管理后台，添加一个<em>二级域名</em>，以下以新网为例。添加一个<code>comment</code>二级域名，并且CNAME解析记录指向了<code>cname.vercel-dns.com</code>，如下图：</p>
+<style>.txutzprrjbri{}</style><img src="/2025/08/28/%E8%A7%A3%E5%86%B3%E5%9B%BD%E5%86%85waline%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8%E7%9A%84%E9%97%AE%E9%A2%98/image-20250828182559071.png" srcset="/img/loading.gif" lazyload class="txutzprrjbri">
 
-<p>这样每次在使用<code>hexo new</code>命令创建新文章时，会生成相同名字的文件夹，也就是文章资源文件夹</p>
-<ol start="3">
-<li>修改Typora的设置，在文件 -&gt; 偏好设置 -&gt; 图像中做如下设置：①修改插入图片时 -&gt; 为复制到指定路径。②选中优先使用相对路径。</li>
-</ol>
-<p><img src="/2025/08/28/hexo%E5%9B%BE%E7%89%87%E6%98%BE%E7%A4%BA%E9%97%AE%E9%A2%98/image-20250828161143052.png" srcset="/img/loading.gif" lazyload alt="Typora的设置"></p>
-<p>经过以上设置后，在复制图片粘贴到Typora中后，会直接复制该图片到文章资源文件夹，同时自动更改路径，图片会自动变为! [ ] ( 文章名&#x2F;image.jpg)，经测试可以正常显示。</p>
+<p>② 打开<code>vercel.com</code>，点击顶部的Domains并选择对应的平台，然后让原有的<code>vercel</code>上的<code>waline</code>地址指向你设置的子域名上。</p>
+<style>.kqeorrmfgeff{}</style><img src="/2025/08/28/%E8%A7%A3%E5%86%B3%E5%9B%BD%E5%86%85waline%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8%E7%9A%84%E9%97%AE%E9%A2%98/image-20250828183148715.png" srcset="/img/loading.gif" lazyload class="kqeorrmfgeff">
+
+<p><img src="/2025/08/28/%E8%A7%A3%E5%86%B3%E5%9B%BD%E5%86%85waline%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8%E7%9A%84%E9%97%AE%E9%A2%98/image-20250828184814653.png" srcset="/img/loading.gif" lazyload alt="绑定域名"></p>
+<p>③ 进入<code>themes -&gt; fluid</code> 文件夹下的配置文件<code>_config.yml</code>中，在<code>serverURL</code>处更改成最新的二级域名即可。</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">waline:</span><br>  <span class="hljs-attr">serverURL:</span> <span class="hljs-string">comment.domains.cn</span><br>  <span class="hljs-attr">path:</span> <span class="hljs-string">window.location.pathname</span><br>  <span class="hljs-attr">meta:</span> [<span class="hljs-string">&#x27;nick&#x27;</span>, <span class="hljs-string">&#x27;mail&#x27;</span>, <span class="hljs-string">&#x27;link&#x27;</span>]<br>  <span class="hljs-attr">requiredMeta:</span> [<span class="hljs-string">&#x27;nick&#x27;</span>]<br>  <span class="hljs-attr">lang:</span> <span class="hljs-string">&#x27;zh-CN&#x27;</span><br>  <span class="hljs-attr">emoji:</span> [<span class="hljs-string">&#x27;https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo&#x27;</span>]<br>  <span class="hljs-attr">dark:</span> <span class="hljs-string">&#x27;html[data-user-color-scheme=&quot;dark&quot;]&#x27;</span><br>  <span class="hljs-attr">wordLimit:</span> <span class="hljs-number">0</span><br>  <span class="hljs-attr">pageSize:</span> <span class="hljs-number">10</span><br></code></pre></td></tr></table></figure>
+
 
                 
               </div>
@@ -317,6 +315,13 @@
   <a href="/categories/hexo/" class="category-chain-item">hexo</a>
   
   
+    <span>></span>
+    
+  <a href="/categories/hexo/Linux/" class="category-chain-item">Linux</a>
+  
+  
+
+  
 
       </span>
     
@@ -329,11 +334,9 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/hexo/" class="print-no-link">#hexo</a>
+        <a href="/tags/%E5%A4%87%E5%BF%98/" class="print-no-link">#备忘</a>
       
-        <a href="/tags/Typora/" class="print-no-link">#Typora</a>
-      
-        <a href="/tags/%E7%BD%91%E7%AB%99%E5%8A%9F%E8%83%BD/" class="print-no-link">#网站功能</a>
+        <a href="/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/" class="print-no-link">#碎碎念</a>
       
     </div>
   
@@ -345,8 +348,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>hexo图片显示问题</div>
-      <div>http://example.com/2025/08/28/hexo图片显示问题/</div>
+      <div>解决国内waline无法使用的问题</div>
+      <div>http://example.com/2025/08/28/解决国内waline无法使用的问题/</div>
     </div>
     <div class="license-meta">
       
@@ -390,18 +393,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/08/28/%E8%A7%A3%E5%86%B3%E5%9B%BD%E5%86%85waline%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8%E7%9A%84%E9%97%AE%E9%A2%98/" title="解决国内waline无法使用的问题">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">解决国内waline无法使用的问题</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2025/08/28/%E5%A2%9E%E5%8A%A0%E7%BD%91%E7%AB%99%E5%BA%95%E9%83%A8%E8%BF%90%E8%A1%8C%E6%97%B6%E9%97%B4%E6%98%BE%E7%A4%BA/" title="增加网站底部运行时间显示">
-                        <span class="hidden-mobile">增加网站底部运行时间显示</span>
+                      <a href="/2025/08/28/hexo%E5%9B%BE%E7%89%87%E6%98%BE%E7%A4%BA%E9%97%AE%E9%A2%98/" title="hexo图片显示问题">
+                        <span class="hidden-mobile">hexo图片显示问题</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
