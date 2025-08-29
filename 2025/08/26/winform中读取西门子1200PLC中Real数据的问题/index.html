@@ -31,7 +31,7 @@
 <meta property="og:image" content="http://example.com/2025/08/26/winform%E4%B8%AD%E8%AF%BB%E5%8F%96%E8%A5%BF%E9%97%A8%E5%AD%901200PLC%E4%B8%ADReal%E6%95%B0%E6%8D%AE%E7%9A%84%E9%97%AE%E9%A2%98/2025-08-26_124131.png">
 <meta property="og:image" content="http://example.com/2025/08/26/winform%E4%B8%AD%E8%AF%BB%E5%8F%96%E8%A5%BF%E9%97%A8%E5%AD%901200PLC%E4%B8%ADReal%E6%95%B0%E6%8D%AE%E7%9A%84%E9%97%AE%E9%A2%98/2025-08-26_150202.png">
 <meta property="article:published_time" content="2025-08-26T10:56:59.000Z">
-<meta property="article:modified_time" content="2025-08-29T08:20:46.732Z">
+<meta property="article:modified_time" content="2025-08-29T08:29:33.824Z">
 <meta property="article:author" content="wanfone">
 <meta property="article:tag" content="PLC">
 <meta property="article:tag" content="Winform">
@@ -231,7 +231,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          424 字
+          429 字
         
       </span>
     
@@ -289,8 +289,8 @@
 <p>经测试S7netplus通讯库中的Read()函数读取PLC中的Real数据时，<strong>括号内的参数</strong>采用简写形式时，即写成类似这种形式：object? values &#x3D; plc.Read(“DB1.DBD4”);，其返回值是IEEE754格式的二进制数据，比如S7-1200中的DB1.DBD4中存储的是4.5，但是读取出来是1083179008。</p>
 <p><img src="/2025/08/26/winform%E4%B8%AD%E8%AF%BB%E5%8F%96%E8%A5%BF%E9%97%A8%E5%AD%901200PLC%E4%B8%ADReal%E6%95%B0%E6%8D%AE%E7%9A%84%E9%97%AE%E9%A2%98/2025-08-26_124131.png" srcset="/img/loading.gif" lazyload alt="Read返回值"></p>
 <p><img src="/2025/08/26/winform%E4%B8%AD%E8%AF%BB%E5%8F%96%E8%A5%BF%E9%97%A8%E5%AD%901200PLC%E4%B8%ADReal%E6%95%B0%E6%8D%AE%E7%9A%84%E9%97%AE%E9%A2%98/2025-08-26_150202.png" srcset="/img/loading.gif" lazyload alt="IEEE754格式转换"></p>
-<p>当采用这种形式Read(S7.Net.DataType.DataBlock, 1, 4, S7.Net.VarType.Real, 1);时，返回的是正常的float数据4.5。使用简写Read(“DB1.DBB2”);可正常读取PLC中的Byte类型数据。</p>
-<p>​		C#与PLC中的数据类型不一样，在PLC中Byte— 8位，Word&#x2F;Int—16位，DWord—32位，但在C#中ushort—16位，int—32位。<br>所以C#与PLC中的数据互相交换时，尤其在写操作时，需要经过以下转换:</p>
+<p>当不采用简写形式，即：Read(S7.Net.DataType.DataBlock, 1, 4, S7.Net.VarType.Real, 1);时，返回的是正常的float数据4.5。使用简写Read(“DB1.DBB2”);可正常读取PLC中的Byte类型数据。</p>
+<p>​		C#与PLC中的数据类型不一样，在PLC中Byte— 8位，Word&#x2F;Int—16位，DWord—32位，但在C#中byte—8位，ushort—16位，int—32位。所以C#与PLC中的数据互相交换时，尤其在写操作时，需要经过以下转换:</p>
 <p>PLC数据 -&gt; C#数据<br>Byte -&gt; byte<br>Word -&gt; short&#x2F;ushort — 或者使用int16&#x2F;uint16<br>Dword -&gt; int&#x2F;uint — 或者使用int32&#x2F;uint32<br>bit -&gt; bool</p>
 <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs C#"><span class="hljs-comment">//ComboBox中的字符串转换成枚举类型，注意必须是枚举里面的名称才能转换</span><br>S7.Net.CpuType cpuType = (S7.Net.CpuType)Enum.Parse(<span class="hljs-keyword">typeof</span>(S7.Net.CpuType), comboBox1.Text);<br><span class="hljs-built_in">string</span> ip = textBox1.Text;      <span class="hljs-comment">//IP本来就是字符串</span><br><span class="hljs-built_in">short</span> rack = <span class="hljs-built_in">short</span>.Parse(textBox2.Text);    <span class="hljs-comment">//把字符串转换成short，简单处理仅限输入数字。</span><br><span class="hljs-built_in">short</span> slot = <span class="hljs-built_in">short</span>.Parse(textBox3.Text);<br>S7.Net.Plc plc = <span class="hljs-keyword">new</span> S7.Net.Plc(cpuType,ip,rack,slot);<br>plc.Open();<br><br><span class="hljs-comment">//PLC中Real变量32位,储存格式IEEE745---C#中的int变量32位，存储格式二进制补码</span><br><span class="hljs-built_in">float</span> t = (<span class="hljs-built_in">float</span>)plc.Read(S7.Net.DataType.DataBlock, <span class="hljs-number">1</span>, <span class="hljs-number">4</span>, S7.Net.VarType.Real, <span class="hljs-number">1</span>);<br>label6.Text = t.ToString();    <br></code></pre></td></tr></table></figure>
 
