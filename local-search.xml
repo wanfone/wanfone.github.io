@@ -4,6 +4,37 @@
   
   
   <entry>
+    <title>C语言指定初始化器</title>
+    <link href="/2025/10/21/C%E8%AF%AD%E8%A8%80%E6%8C%87%E5%AE%9A%E5%88%9D%E5%A7%8B%E5%8C%96%E5%99%A8/"/>
+    <url>/2025/10/21/C%E8%AF%AD%E8%A8%80%E6%8C%87%E5%AE%9A%E5%88%9D%E5%A7%8B%E5%8C%96%E5%99%A8/</url>
+    
+    <content type="html"><![CDATA[<p>结构体指定初始化器允许在初始化时直接指定成员变量值，无需按声明顺序进行。这一特性在C99和C++20标准中均有支持，适用于聚合类型（如结构体、联合体、数组）。这种写法可以：</p><p>  • 不必按照结构体定义的顺序初始化成员。</p><p>  • 只初始化需要的成员，未列出的成员自动设为0或NULL。</p><p>C99示例如下：</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Person</span></span><br><span class="hljs-class">&#123;</span><br>    <span class="hljs-type">char</span> name;<br>    <span class="hljs-type">bool</span> Gender;<br>    <span class="hljs-type">int</span> age;<br>    <span class="hljs-type">double</span> score;<br>&#125;;<br><br><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Person</span> <span class="hljs-title">p2</span> =</span> &#123;.name = <span class="hljs-string">&quot;Bob&quot;</span>,.score = <span class="hljs-number">60</span>,&#125;;<br></code></pre></td></tr></table></figure><p>未指定成员默认初始化为0或空字符串</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>编程</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>编程</tag>
+      
+      <tag>C</tag>
+      
+      <tag>C++</tag>
+      
+      <tag>C#</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>安卓手机安装GKD屏蔽广告</title>
     <link href="/2025/10/02/%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E5%AE%89%E8%A3%85GKD%E5%B1%8F%E8%94%BD%E5%B9%BF%E5%91%8A/"/>
     <url>/2025/10/02/%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E5%AE%89%E8%A3%85GKD%E5%B1%8F%E8%94%BD%E5%B9%BF%E5%91%8A/</url>
@@ -45,9 +76,9 @@
     
     <tags>
       
-      <tag>PLC</tag>
-      
       <tag>工控</tag>
+      
+      <tag>PLC</tag>
       
     </tags>
     
@@ -85,7 +116,7 @@
     <link href="/2025/08/28/%E8%A7%A3%E5%86%B3%E5%9B%BD%E5%86%85waline%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8%E7%9A%84%E9%97%AE%E9%A2%98/"/>
     <url>/2025/08/28/%E8%A7%A3%E5%86%B3%E5%9B%BD%E5%86%85waline%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8%E7%9A%84%E9%97%AE%E9%A2%98/</url>
     
-    <content type="html"><![CDATA[<blockquote><table><tr><td bgcolor=#7FFFD4>waline的评论模块国内IP可以正常显示，但是无法登录，无法加载表情和历史评论，导致无法使用。究其原因是vercel.app域名在国内遭到污染无法访问导致的。解决方案：用已有域名的子域名来代替vercel.app。</td></tr></table></blockquote><p>步骤如下：</p><p>① 打开域名管理后台，添加一个<em>二级域名</em>，以下以新网为例。添加一个<code>comment</code>二级域名，并且CNAME解析记录指向了<code>cname.vercel-dns.com</code>，如下图：</p><style>.jctaqfepggln{}</style><img src="/2025/08/28/%E8%A7%A3%E5%86%B3%E5%9B%BD%E5%86%85waline%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8%E7%9A%84%E9%97%AE%E9%A2%98/image-20250828182559071.png" class="jctaqfepggln"><p>② 打开<code>vercel.com</code>，点击顶部的Domains并选择对应的平台，然后让原有的<code>vercel</code>上的<code>waline</code>地址指向你设置的子域名上。</p><style>.xvsavbgyvzqe{}</style><img src="/2025/08/28/%E8%A7%A3%E5%86%B3%E5%9B%BD%E5%86%85waline%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8%E7%9A%84%E9%97%AE%E9%A2%98/image-20250828183148715.png" class="xvsavbgyvzqe"><style>.rlbjfsuxpjeo{}</style><img src="/2025/08/28/%E8%A7%A3%E5%86%B3%E5%9B%BD%E5%86%85waline%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8%E7%9A%84%E9%97%AE%E9%A2%98/image-20250828184814653.png" class="rlbjfsuxpjeo"><p>③ 进入<code>themes -&gt; fluid</code> 文件夹下的配置文件<code>_config.yml</code>中，在<code>serverURL</code>处更改成最新的二级域名即可。</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">waline:</span><br>  <span class="hljs-attr">serverURL:</span> <span class="hljs-string">comment.domains.cn</span><br>  <span class="hljs-attr">path:</span> <span class="hljs-string">window.location.pathname</span><br>  <span class="hljs-attr">meta:</span> [<span class="hljs-string">&#x27;nick&#x27;</span>, <span class="hljs-string">&#x27;mail&#x27;</span>, <span class="hljs-string">&#x27;link&#x27;</span>]<br>  <span class="hljs-attr">requiredMeta:</span> [<span class="hljs-string">&#x27;nick&#x27;</span>]<br>  <span class="hljs-attr">lang:</span> <span class="hljs-string">&#x27;zh-CN&#x27;</span><br>  <span class="hljs-attr">emoji:</span> [<span class="hljs-string">&#x27;https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo&#x27;</span>]<br>  <span class="hljs-attr">dark:</span> <span class="hljs-string">&#x27;html[data-user-color-scheme=&quot;dark&quot;]&#x27;</span><br>  <span class="hljs-attr">wordLimit:</span> <span class="hljs-number">0</span><br>  <span class="hljs-attr">pageSize:</span> <span class="hljs-number">10</span><br></code></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<blockquote><table><tr><td bgcolor=#7FFFD4>waline的评论模块国内IP可以正常显示，但是无法登录，无法加载表情和历史评论，导致无法使用。究其原因是vercel.app域名在国内遭到污染无法访问导致的。解决方案：用已有域名的子域名来代替vercel.app。</td></tr></table></blockquote><p>步骤如下：</p><p>① 打开域名管理后台，添加一个<em>二级域名</em>，以下以新网为例。添加一个<code>comment</code>二级域名，并且CNAME解析记录指向了<code>cname.vercel-dns.com</code>，如下图：</p><style>.pfqfsffmugnk{}</style><img src="/2025/08/28/%E8%A7%A3%E5%86%B3%E5%9B%BD%E5%86%85waline%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8%E7%9A%84%E9%97%AE%E9%A2%98/image-20250828182559071.png" class="pfqfsffmugnk"><p>② 打开<code>vercel.com</code>，点击顶部的Domains并选择对应的平台，然后让原有的<code>vercel</code>上的<code>waline</code>地址指向你设置的子域名上。</p><style>.xdtuklukutls{}</style><img src="/2025/08/28/%E8%A7%A3%E5%86%B3%E5%9B%BD%E5%86%85waline%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8%E7%9A%84%E9%97%AE%E9%A2%98/image-20250828183148715.png" class="xdtuklukutls"><style>.zevgckqfhymv{}</style><img src="/2025/08/28/%E8%A7%A3%E5%86%B3%E5%9B%BD%E5%86%85waline%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8%E7%9A%84%E9%97%AE%E9%A2%98/image-20250828184814653.png" class="zevgckqfhymv"><p>③ 进入<code>themes -&gt; fluid</code> 文件夹下的配置文件<code>_config.yml</code>中，在<code>serverURL</code>处更改成最新的二级域名即可。</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">waline:</span><br>  <span class="hljs-attr">serverURL:</span> <span class="hljs-string">comment.domains.cn</span><br>  <span class="hljs-attr">path:</span> <span class="hljs-string">window.location.pathname</span><br>  <span class="hljs-attr">meta:</span> [<span class="hljs-string">&#x27;nick&#x27;</span>, <span class="hljs-string">&#x27;mail&#x27;</span>, <span class="hljs-string">&#x27;link&#x27;</span>]<br>  <span class="hljs-attr">requiredMeta:</span> [<span class="hljs-string">&#x27;nick&#x27;</span>]<br>  <span class="hljs-attr">lang:</span> <span class="hljs-string">&#x27;zh-CN&#x27;</span><br>  <span class="hljs-attr">emoji:</span> [<span class="hljs-string">&#x27;https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo&#x27;</span>]<br>  <span class="hljs-attr">dark:</span> <span class="hljs-string">&#x27;html[data-user-color-scheme=&quot;dark&quot;]&#x27;</span><br>  <span class="hljs-attr">wordLimit:</span> <span class="hljs-number">0</span><br>  <span class="hljs-attr">pageSize:</span> <span class="hljs-number">10</span><br></code></pre></td></tr></table></figure>]]></content>
     
     
     <categories>
@@ -99,9 +130,9 @@
       
       <tag>hexo</tag>
       
-      <tag>waline</tag>
-      
       <tag>Fluid</tag>
+      
+      <tag>waline</tag>
       
     </tags>
     
@@ -180,13 +211,13 @@
     
     <tags>
       
+      <tag>C#</tag>
+      
       <tag>PLC</tag>
       
       <tag>Winform</tag>
       
       <tag>S7netplus</tag>
-      
-      <tag>C#</tag>
       
     </tags>
     
@@ -213,11 +244,11 @@
       
       <tag>hexo</tag>
       
+      <tag>waline</tag>
+      
       <tag>GitHub</tag>
       
       <tag>Gitee</tag>
-      
-      <tag>waline</tag>
       
     </tags>
     
