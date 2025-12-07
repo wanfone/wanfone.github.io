@@ -24,7 +24,7 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="解决国内waline无法使用的问题">
 <meta property="og:url" content="http://example.com/2025/08/28/%E8%A7%A3%E5%86%B3%E5%9B%BD%E5%86%85waline%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8%E7%9A%84%E9%97%AE%E9%A2%98/index.html">
-<meta property="og:site_name" content="wanfone碎碎念">
+<meta property="og:site_name" content="wang&#39;s blog">
 <meta property="og:description" content="waline的评论模块国内IP可以正常显示，但是无法登录，无法加载表情和历史评论，导致无法使用。究其原因是vercel.app域名在国内遭到污染无法访问导致的。解决方案：用已有域名的子域名来代替vercel.app。 步骤如下： ① 打开域名管理后台，添加一个二级域名，以下以新网为例。添加一个comment二级域名，并且CNAME解析记录指向了cname.vercel-dns.com，如下图：">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/2025/08/28/%E8%A7%A3%E5%86%B3%E5%9B%BD%E5%86%85waline%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8%E7%9A%84%E9%97%AE%E9%A2%98/image-20250828182559071.png">
@@ -41,7 +41,7 @@
   
   
   
-  <title>解决国内waline无法使用的问题 - wanfone碎碎念</title>
+  <title>解决国内waline无法使用的问题 - wang&#39;s blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -287,12 +287,12 @@
 <table><tr><td bgcolor=#7FFFD4>waline的评论模块国内IP可以正常显示，但是无法登录，无法加载表情和历史评论，导致无法使用。究其原因是vercel.app域名在国内遭到污染无法访问导致的。解决方案：用已有域名的子域名来代替vercel.app。</td></tr></table></blockquote>
 <p>步骤如下：</p>
 <p>① 打开域名管理后台，添加一个<em>二级域名</em>，以下以新网为例。添加一个<code>comment</code>二级域名，并且CNAME解析记录指向了<code>cname.vercel-dns.com</code>，如下图：</p>
-<style>.vqkbuiwibuxe{}</style><img src="/2025/08/28/%E8%A7%A3%E5%86%B3%E5%9B%BD%E5%86%85waline%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8%E7%9A%84%E9%97%AE%E9%A2%98/image-20250828182559071.png" srcset="/img/loading.gif" lazyload class="vqkbuiwibuxe">
+<style>.hkrfghlobhmj{}</style><img src="/2025/08/28/%E8%A7%A3%E5%86%B3%E5%9B%BD%E5%86%85waline%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8%E7%9A%84%E9%97%AE%E9%A2%98/image-20250828182559071.png" srcset="/img/loading.gif" lazyload class="hkrfghlobhmj">
 
 <p>② 打开<code>vercel.com</code>，点击顶部的Domains并选择对应的平台，然后让原有的<code>vercel</code>上的<code>waline</code>地址指向你设置的子域名上。</p>
-<style>.ididwfektveu{}</style><img src="/2025/08/28/%E8%A7%A3%E5%86%B3%E5%9B%BD%E5%86%85waline%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8%E7%9A%84%E9%97%AE%E9%A2%98/image-20250828183148715.png" srcset="/img/loading.gif" lazyload class="ididwfektveu">
+<style>.yibhpocgbdhg{}</style><img src="/2025/08/28/%E8%A7%A3%E5%86%B3%E5%9B%BD%E5%86%85waline%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8%E7%9A%84%E9%97%AE%E9%A2%98/image-20250828183148715.png" srcset="/img/loading.gif" lazyload class="yibhpocgbdhg">
 
-<style>.jqwwchsgbhdd{}</style><img src="/2025/08/28/%E8%A7%A3%E5%86%B3%E5%9B%BD%E5%86%85waline%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8%E7%9A%84%E9%97%AE%E9%A2%98/image-20250828184814653.png" srcset="/img/loading.gif" lazyload class="jqwwchsgbhdd">
+<style>.uienjfplwfft{}</style><img src="/2025/08/28/%E8%A7%A3%E5%86%B3%E5%9B%BD%E5%86%85waline%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8%E7%9A%84%E9%97%AE%E9%A2%98/image-20250828184814653.png" srcset="/img/loading.gif" lazyload class="uienjfplwfft">
 
 <p>③ 进入<code>themes -&gt; fluid</code> 文件夹下的配置文件<code>_config.yml</code>中，在<code>serverURL</code>处更改成最新的二级域名即可。</p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">waline:</span><br>  <span class="hljs-attr">serverURL:</span> <span class="hljs-string">comment.domains.cn</span><br>  <span class="hljs-attr">path:</span> <span class="hljs-string">window.location.pathname</span><br>  <span class="hljs-attr">meta:</span> [<span class="hljs-string">&#x27;nick&#x27;</span>, <span class="hljs-string">&#x27;mail&#x27;</span>, <span class="hljs-string">&#x27;link&#x27;</span>]<br>  <span class="hljs-attr">requiredMeta:</span> [<span class="hljs-string">&#x27;nick&#x27;</span>]<br>  <span class="hljs-attr">lang:</span> <span class="hljs-string">&#x27;zh-CN&#x27;</span><br>  <span class="hljs-attr">emoji:</span> [<span class="hljs-string">&#x27;https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo&#x27;</span>]<br>  <span class="hljs-attr">dark:</span> <span class="hljs-string">&#x27;html[data-user-color-scheme=&quot;dark&quot;]&#x27;</span><br>  <span class="hljs-attr">wordLimit:</span> <span class="hljs-number">0</span><br>  <span class="hljs-attr">pageSize:</span> <span class="hljs-number">10</span><br></code></pre></td></tr></table></figure>
